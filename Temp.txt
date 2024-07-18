@@ -1,0 +1,10 @@
+class Temp  
+{   
+	static void Main()   
+        {  
+		float Fahrenheit, Celsius;  
+		Fahrenheit = 35;  
+		Celsius =((Fahrenheit - 32)*5)/9;  
+		System.Console.WriteLine("Temperature in celsius is: "+Celsius);  
+        }
+}  
