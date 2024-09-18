@@ -1,15 +1,31 @@
 #Console code
 // Simulating a simple form interaction
+using System;
+using System.Collections.Generic;
+
 class Program
 {
     static void Main(string[] args)
+    {
+        // Instantiate Calendar object and call the method to interact with the user
+        Calendar obj = new Calendar();
+        obj.Run();
+        
+        // Keep the console window open
+        System.Console.ReadLine();
+    }
+}
+
+class Calendar
+{
+    public void Run()
     {
         // Simulate TextBox input for name
         System.Console.WriteLine("Enter Your Name: ");
         string name = System.Console.ReadLine();
 
         // Simulate DropDownList selection for favorite color
-        System.Collections.Generic.List<string> colors = new System.Collections.Generic.List<string> { "Red", "Green", "Blue" };
+        List<string> colors = new List<string> { "Red", "Green", "Blue" };
         System.Console.WriteLine("Select Your Favorite Color: ");
         for (int i = 0; i < colors.Count; i++)
         {
@@ -28,9 +44,6 @@ class Program
         System.Console.WriteLine("\nForm Submitted!");
         System.Console.WriteLine("Name: " + name);
         System.Console.WriteLine("Favorite Color: " + selectedColor);
-
-        // Keep the console window open
-        System.Console.ReadLine();
     }
 }
 
