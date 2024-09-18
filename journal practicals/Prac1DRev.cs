@@ -80,39 +80,38 @@ namespace Rev1D5
 }
 
 #console
-using System;
-
 namespace ConsoleApp
 {
     public class NumberProcessor
     {
-        public (int,int) ProcessNumber(int n)
+        public (int, int) ProcessNumber(int n)
         {
-            int b=n,t=0,s=0,r=0;
-            while(b!=0)
+            int b = n, t = 0, s = 0, r = 0;
+            while (b != 0)
             {
-                t=b%10;
-                r=r*10+t;
-                b/=10;
-                s+=t;
+                t = b % 10;
+                r = r * 10 + t;
+                b /= 10;
+                s += t;
             }
-            return (r,s);
+            return (r, s);
         }
     }
+
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter a number:");
-            if(int.TryParse(Console.ReadLine(),out int n))
+            System.Console.WriteLine("Enter a number:");
+            if (int.TryParse(System.Console.ReadLine(), out int n))
             {
-                NumberProcessor p=new NumberProcessor();
-                var(r,s)=p.ProcessNumber(n);
-                Console.WriteLine($"Reversed:{r}\nSum:{s}");
+                NumberProcessor p = new NumberProcessor();
+                var (r, s) = p.ProcessNumber(n);
+                System.Console.WriteLine($"Reversed: {r}\nSum: {s}");
             }
             else
-                Console.WriteLine("Invalid input.");
-            Console.ReadKey();
+                System.Console.WriteLine("Invalid input.");
+            System.Console.ReadKey();
         }
     }
 }
