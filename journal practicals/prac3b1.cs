@@ -72,29 +72,39 @@ namespace Prac3B1
 </html>
 
 #Console code
-using System;
-
-class Program
+class Prac3B1
 {
     static void Main(string[] args)
     {
+        // Create an instance of ChristmasChecker class
+        ChristmasChecker checker = new ChristmasChecker();
+
+        // Call the method to check if today is Christmas
+        checker.CheckIfTodayIsChristmas();
+
+        // Keep the console window open
+        System.Console.ReadLine();
+    }
+}
+
+class ChristmasChecker
+{
+    public void CheckIfTodayIsChristmas()
+    {
         // Get today's date
-        DateTime today = DateTime.Now;
+        System.DateTime today = System.DateTime.Now;
 
         // Define Christmas (December 25th) for the current year
-        DateTime christmas = new DateTime(today.Year, 12, 25);
+        System.DateTime christmas = new System.DateTime(today.Year, 12, 25);
 
         // Check if today is Christmas
         if (today.Date == christmas.Date)
         {
-            Console.WriteLine("Today is Christmas Day! Merry Christmas!");
+            System.Console.WriteLine("Today is Christmas Day! Merry Christmas!");
         }
         else
         {
-            Console.WriteLine("Today is not Christmas. It's " + today.ToString("MMMM dd") + ".");
+            System.Console.WriteLine("Today is not Christmas. It's " + today.ToString("MMMM dd") + ".");
         }
-
-        // Keep the console window open
-        Console.ReadLine();
     }
 }
