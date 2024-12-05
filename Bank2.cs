@@ -63,10 +63,10 @@ public class BankAccount
 
     public void DisplayAccountDetails()
     {
-        Console.WriteLine("Account Number: {_accountNumber}");
-        Console.WriteLine("Account Type: {_accountType}");
-        Console.WriteLine("Account Holder Name: {_accountHolderName}");
-        Console.WriteLine("Balance: {_balance:C}");
+        Console.WriteLine(string.Format("Account Number: {0}", _accountNumber));
+        Console.WriteLine(string.Format("Account Type: {0}", _accountType));
+        Console.WriteLine(string.Format("Account Holder Name: {0}", _accountHolderName));
+        Console.WriteLine(string.Format("Balance: {0:C}", _balance));
     }
 }
 
@@ -94,17 +94,17 @@ public class Bank2
         Console.Write("Enter amount to assign as initial amount: ");
         double initialAmount = double.Parse(Console.ReadLine());
         account.AssignInitialAmount(initialAmount);
-        Console.WriteLine("New Balance: {account.Balance:C}");
+        Console.WriteLine(string.Format("New Balance: {0:C}", account.Balance));
 
         Console.Write("Enter amount to deposit: ");
         double depositAmount = double.Parse(Console.ReadLine());
         account.Deposit(depositAmount);
-        Console.WriteLine("New Balance: {account.Balance:C}");
+        Console.WriteLine(string.Format("New Balance: {0:C}", account.Balance));
 
         Console.Write("Enter amount to withdraw: ");
         double withdrawAmount = double.Parse(Console.ReadLine());
         account.Withdraw(withdrawAmount);
-        Console.WriteLine("New Balance: {account.Balance:C}");
+        Console.WriteLine(string.Format("New Balance: {0:C}", account.Balance));
 
         Console.WriteLine("Final Account Details:");
         account.DisplayAccountDetails();
